@@ -2,10 +2,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from mercado import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(('mercado.urls', 'mercado'), namespace='mercado')),  # Root-level URLs
+    path('', views.home, name='home'),
+    path('login/', views.tela_login, name='login'),
+    path('cadastro/', views.tela_cadastro, name='cadastro'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

@@ -18,7 +18,7 @@ def home(request):
         'produtos': produtos,
         'favoritos': list(favoritos),
     }
-    return render(request, 'home.html', context)
+    return render(request, 'home.html')
 
 def tela_cadastro(request):
     if request.method == 'POST':
